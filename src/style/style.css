@@ -7,6 +7,11 @@
 
 html {
   font-size: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
 }
 
 /* Navbar */
@@ -26,3 +31,135 @@ nav h3 {
 }
 
 /* End Navbar */
+
+/* main */
+
+main {
+  display: flex;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 3rem;
+  color: #222b45;
+  height: 80vh;
+}
+
+/* end main */
+
+/* Chart */
+
+.chart-container {
+  flex: 1;
+}
+
+/* end Chart */
+
+/* data global */
+
+.data-global {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-global .title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.data-global .date {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.ifected-data {
+  flex: 2;
+  background-color: #f2b900;
+}
+
+.bundle-data {
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+  justify-content: center;
+}
+
+.died-data {
+  flex: 1;
+  background-color: #f26353;
+}
+
+.recover-data {
+  flex: 1;
+  background-color: #52cc99;
+}
+
+.recover-data,
+.died-data,
+.ifected-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border-radius: 8px;
+  color: white;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.recover-data p,
+.died-data p,
+.ifected-data p {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: normal;
+}
+
+/* data global */
+
+/* media query */
+@media screen and (max-width: 560px) {
+  main {
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .data-global {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .recover-data,
+  .died-data,
+  .ifected-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 8px;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+  }
+
+  .recover-data p,
+  .died-data p,
+  .ifected-data p {
+    font-size: 1rem;
+    color: white;
+    font-weight: normal;
+  }
+}
+/* end media query */
