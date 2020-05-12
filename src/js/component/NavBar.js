@@ -8,13 +8,13 @@ class NavBar extends HTMLElement {
             <style>
 
                 nav {
-                background-color: #222b45;
-                color: white;
-                font-size: 2rem;
-                padding-top: .5rem;
-                padding-bottom: .5rem;
-                padding-left: 3rem;
-                box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+                  background-color: #222b45;
+                  color: white;
+                  font-size: 2rem;
+                  padding-top: .5rem;
+                  padding-bottom: .5rem;
+                  padding-left: 3rem;
+                  box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
                 }
                 
                 nav h3 {

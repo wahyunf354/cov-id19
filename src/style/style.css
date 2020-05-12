@@ -12,16 +12,18 @@ html {
 
 body {
   background-color: #f4f6f8;
+  max-width: 100wh;
 }
 
 /* main */
 
 .main {
   display: flex;
-  width: 100%;
-  padding-left: 4rem;
+  width: 100vw;
+  max-width: 100vw;
+  /* padding-left: 4rem;
   padding-right: 4rem;
-  padding-top: 3rem;
+  padding-top: 3rem; */
   color: #222b45;
   height: 80vh;
 }
@@ -107,6 +109,19 @@ body {
 
 /* data Country */
 
+section.regional {
+  width: 90vw;
+  height: 60vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-regional {
+  width: 80%;
+}
+
 .container-regional h1 {
   text-align: center;
   font-size: 2rem;
@@ -114,37 +129,6 @@ body {
   margin-bottom: 1rem;
   color: #222b45;
 }
-
-/* search */
-section.regional {
-  padding: 10rem;
-  width: 100vw;
-  height: 60vh;
-}
-
-.search-country {
-  padding: 0 3rem;
-  display: flex;
-  justify-content: center;
-}
-
-.countryCode {
-  width: 80%;
-  box-sizing: border-box;
-  background-color: #222b45;
-  border-radius: 16px;
-  padding: 16px;
-  color: #ffffff;
-  margin-bottom: 8px;
-  border: none;
-  outline: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  font-size: 1.7rem;
-  cursor: pointer;
-}
-/* search */
 
 /* covid country */
 .data-regional {
@@ -174,7 +158,7 @@ section.regional {
 .data-regional .recovered,
 .data-regional .confirmed,
 .data-regional .deaths {
-  width: 200px;
+  width: 300px;
   height: 150px;
   display: flex;
   flex-direction: column;
