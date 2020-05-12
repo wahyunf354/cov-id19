@@ -29,9 +29,12 @@ const globalCasesApi = () => {
 };
 
 const countryAPI = () => {
-  axios.get("https://restcountries.eu/rest/v2/all").then((res) => {
-    selectCountry(res.data);
-  });
+  axios
+    .get("https://restcountries.eu/rest/v2/all")
+    .then((res) => {
+      selectCountry(res.data);
+    })
+    .catch((err) => console.log(err));
 };
 
 const covidCasesCountryAPI = (codeCountry) => {

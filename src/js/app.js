@@ -6,9 +6,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { globalCasesApi, dailyCovid, countryAPI, newsAPI } from "./api";
 import { hendleSelectChange, hendleSelectNotChange } from "./selectContry";
 import main from "./main";
-import loading from "./loading";
 
-loading();
 countryAPI();
 dailyCovid();
 globalCasesApi();
