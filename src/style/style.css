@@ -141,18 +141,18 @@ section.regional {
 }
 
 .data-regional .deaths {
-  border: 0.5rem solid #f26353;
-  color: #f26353;
+  background-color: #f26353;
+  color: white;
 }
 
 .data-regional .confirmed {
-  border: 0.5rem solid #f2b900;
-  color: #f2b900;
+  background-color: #f2b900;
+  color: white;
 }
 
 .data-regional .recovered {
-  border: 0.5rem solid #52cc99;
-  color: #52cc99;
+  background-color: #52cc99;
+  color: white;
 }
 
 .data-regional .recovered,
@@ -177,6 +177,7 @@ section.regional {
 .data-regional .deaths p {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  font-weight: normal;
 }
 /* end covid country */
 /* end data Country */
