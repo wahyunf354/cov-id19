@@ -16,6 +16,14 @@ const updateTime = () => {
   }, 1000);
 };
 
+const displayErrorGlobalCases = (err) => {
+  $(".data-global")
+    .text("Maaf Terdapat Kesalahan " + err)
+    .css("text-align", "center")
+    .css("align-items", "center")
+    .css("justify-content", "center");
+};
+
 const globalCases = (data) => {
   updateTime();
   $(".ifected-data").append(formatNumber(data.confirmed.value));
@@ -23,4 +31,4 @@ const globalCases = (data) => {
   $(".recover-data").append(formatNumber(data.recovered.value));
 };
 
-export default globalCases;
+export { globalCases, displayErrorGlobalCases };

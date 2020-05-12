@@ -1,5 +1,10 @@
 import "../style/style.css";
-import { dailyCovid, globalCasesApi } from "./api";
+import "./component/NavBar.js";
+import { globalCasesApi, dailyCovid, countryAPI } from "./api";
+import { hendleSelectChange, hendleSelectNotChange } from "./selectContry";
 
+countryAPI();
 dailyCovid();
 globalCasesApi();
+hendleSelectNotChange();
+hendleSelectChange();

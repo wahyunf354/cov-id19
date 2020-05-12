@@ -105,4 +105,15 @@ const displayChart = (data) => {
   });
 };
 
-export default displayChart;
+const displayErrorChart = (err) => {
+  $(".chart-container")
+    .text("Maaf Terjadi Kesalahan " + err)
+    .css("color", "black")
+    .css("text-align", "center")
+    .css("display", "flex")
+    .css("align-items", "center")
+    .css("justify-content", "center")
+    .css("flex", 1);
+};
+
+export { displayChart, displayErrorChart };
