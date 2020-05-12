@@ -28,6 +28,16 @@ class SearchCountry extends HTMLElement {
             font-size: 1.7rem;
             cursor: pointer;
           }
+          @media screen and (max-width: 560px) {
+            .countryCode {
+              width: 100%;
+            }
+            .search-country {
+              padding: 0;
+              display: flex;
+              justify-content: center;
+            }
+          }
         </style>
         <div class="search-country">
             <select name="countryCode" id="countryCode" class="countryCode">

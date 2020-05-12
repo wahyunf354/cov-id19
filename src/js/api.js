@@ -2,6 +2,7 @@ import axios from "axios";
 import { displayChart, displayErrorChart } from "./chart.js";
 import { globalCases, displayErrorGlobalCases } from "./globalCases.js";
 import { selectCountry } from "./selectContry.js";
+import { newsContent } from "./news.js";
 
 const dailyCovid = () => {
   return new Promise((resolve, rejects) => {
@@ -44,4 +45,20 @@ const covidCasesCountryAPI = (codeCountry) => {
   });
 };
 
-export { dailyCovid, globalCasesApi, countryAPI, covidCasesCountryAPI };
+const API_KEY = "b6f089ca3d704a47b97dff71c7efc626";
+const newsAPI = () => {
+  axios
+    .get(
+      "http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=" +
+        API_KEY
+    )
+    .then((res) => newsContent(res.data.articles));
+};
+
+export {
+  dailyCovid,
+  globalCasesApi,
+  countryAPI,
+  covidCasesCountryAPI,
+  newsAPI,
+};

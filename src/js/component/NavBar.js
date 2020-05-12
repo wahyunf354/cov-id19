@@ -9,11 +9,14 @@ class NavBar extends HTMLElement {
 
                 nav {
                   background-color: #222b45;
+                  width: 100wh;
+                  overflow: hidden;
                   color: white;
                   font-size: 2rem;
                   padding-top: .5rem;
                   padding-bottom: .5rem;
                   padding-left: 3rem;
+                  box-sizing: border-box;
                   box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
                 }
                 
