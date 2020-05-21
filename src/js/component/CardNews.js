@@ -1,9 +1,4 @@
 class CardNews extends HTMLElement {
-  //   constructor() {
-  //     super();
-  //     this._shadowRoot = this.attachShadow({ mode: "closed" });
-  //   }
-
   set data(data) {
     this._data = data;
     this.render();
@@ -12,7 +7,7 @@ class CardNews extends HTMLElement {
   render() {
     this.innerHTML = `
             <div class="card d-flex justify-content-between flex-column">
-                <img src="${this._data.urlToImage}"class="card-img-top">
+                <img src="${this._data.urlToImage}"class="card-img-top" alt="Gambar Berita" >
                 <div class="card-body">
                     <h5 class="card-title">${this._data.title}</h5>
                     <p class="card-text">${this._data.description}</p>

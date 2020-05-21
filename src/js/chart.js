@@ -2,10 +2,10 @@ import $ from "jquery";
 import Chart from "chart.js";
 
 const displayChart = (data) => {
-  let dates = [];
-  let comfirmed = [];
-  let deaths = [];
-  let recovers = [];
+  const dates = [];
+  const comfirmed = [];
+  const deaths = [];
+  const recovers = [];
 
   data.forEach((date) => {
     dates.push(date.reportDate);
@@ -14,7 +14,7 @@ const displayChart = (data) => {
     recovers.push(date.totalRecovered);
   });
 
-  let ctx = $("#chartGlobal");
+  const ctx = $("#chartGlobal");
   var myChart = new Chart(ctx, {
     type: "line",
     data: {

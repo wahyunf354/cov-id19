@@ -1,27 +1,26 @@
-import axios from "axios";
-import { displayChart, displayErrorChart } from "./chart.js";
-import { globalCases, displayErrorGlobalCases } from "./globalCases.js";
-import { selectCountry } from "./selectContry.js";
-import { newsContent } from "./news.js";
+import axios from 'axios';
+import { displayChart, displayErrorChart } from './chart';
+import { globalCases, displayErrorGlobalCases } from './globalCases';
+// eslint-disable-next-line import/no-cycle
+import { selectCountry } from './selectContry';
+import { newsContent } from './news';
 
-const dailyCovid = () => {
-  return new Promise((resolve, rejects) => {
-    axios
-      .get("https://covid19.mathdro.id/api/daily")
-      .then((res) => {
-        displayChart(res.data);
-        resolve(true);
-      })
-      .catch((err) => {
-        displayErrorGlobalCases(err);
-        rejects(false);
-      });
-  });
-};
+const dailyCovid = () => new Promise((resolve, rejects) => {
+  axios
+    .get('https://covid19.mathdro.id/api/daily')
+    .then((res) => {
+      displayChart(res.data);
+      resolve(true);
+    })
+    .catch((err) => {
+      displayErrorGlobalCases(err);
+      rejects(err);
+    });
+});
 
 const globalCasesApi = () => {
   axios
-    .get("https://covid19.mathdro.id/api")
+    .get('https://covid19.mathdro.id/api')
     .then((res) => {
       globalCases(res.data);
     })
@@ -30,30 +29,26 @@ const globalCasesApi = () => {
 
 const countryAPI = () => {
   axios
-    .get("https://restcountries.eu/rest/v2/all")
+    .get('https://restcountries.eu/rest/v2/all')
     .then((res) => {
       selectCountry(res.data);
-    })
-    .catch((err) => console.log(err));
+    });
 };
 
-const covidCasesCountryAPI = (codeCountry) => {
-  return new Promise((resolve, reject) => {
-    axios
-      .get(`https://covid19.mathdro.id/api/countries/${codeCountry}`)
-      .then((res) => resolve(res.data))
-      .catch((err) => {
-        reject(err);
-      });
-  });
-};
+const covidCasesCountryAPI = (codeCountry) => new Promise((resolve, reject) => {
+  axios
+    .get(`https://covid19.mathdro.id/api/countries/${codeCountry}`)
+    .then((res) => resolve(res.data))
+    .catch((err) => {
+      reject(err);
+    });
+});
 
-const API_KEY = "b6f089ca3d704a47b97dff71c7efc626";
+const API_KEY = 'b6f089ca3d704a47b97dff71c7efc626';
 const newsAPI = () => {
   axios
     .get(
-      "http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=" +
-        API_KEY
+      `http://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=${API_KEY}`,
     )
     .then((res) => newsContent(res.data.articles));
 };
